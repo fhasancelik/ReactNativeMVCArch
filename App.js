@@ -1,12 +1,21 @@
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import MyController from './src/controllers/MyController'
+import ListProduct from './src/screens/ListProduct'
+import LoadingAnimation from './src/animation/LoadingAnimation'
+import BottomNavigators from './src/navigators/BottomNavigators'
+import { NavigationContainer } from '@react-navigation/native'
+import { DataProvider } from './src/context/context'
+import RootNavigator from './src/navigators/RootNavigator'
 
 const App = () => {
   return (
-<SafeAreaView style={{flex:1,alignItems:'center',justifyContent:'center'}}>
-<MyController/>
+<DataProvider >
+<SafeAreaView style={{flex:1}}>
+<NavigationContainer>
+<RootNavigator/>
+</NavigationContainer>
 </SafeAreaView>
+</DataProvider>
   )
 }
 
